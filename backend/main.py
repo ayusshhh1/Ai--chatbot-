@@ -6,9 +6,9 @@ import os
 from dotenv import load_dotenv
 import uuid
 
-from database import get_db, init_db
-from models import Conversation, Message
-from schemas import (
+from backend.database import get_db, init_db
+from backend.models import Conversation, Message
+from backend.schemas import (
     ConversationResponse,
     ChatRequest,
     ChatResponse,
