@@ -3,8 +3,7 @@ import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
 import { Send, Trash2, Copy, Check, MessageSquare, Sparkles, Moon, Sun, Zap, Lightbulb, Code, Briefcase, Clock } from 'lucide-react';
 
-const API_URL = 'https://ai--chatbot-9sqf.onrender.com';
-
+const API_URL = import.meta.env.VITE_API_URL;
 // Suggested prompts for quick start
 const SUGGESTED_PROMPTS = [
   { icon: Lightbulb, text: "Explain quantum computing in simple terms", category: "Learn" },
@@ -224,8 +223,8 @@ function App() {
             <div key={index} className={`mb-6 flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
               <div className={`group relative max-w-[85%] sm:max-w-2xl ${message.role === 'user' ? 'ml-4 sm:ml-12' : 'mr-4 sm:mr-12'}`}>
                 <div className={`rounded-2xl px-4 py-3 transition-all duration-200 ${message.role === 'user'
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : darkMode ? 'bg-gray-800 border border-gray-700 text-gray-100 shadow-lg' : 'bg-white border border-gray-200 text-gray-900 shadow-md'
+                  ? 'bg-blue-600 text-white shadow-lg'
+                  : darkMode ? 'bg-gray-800 border border-gray-700 text-gray-100 shadow-lg' : 'bg-white border border-gray-200 text-gray-900 shadow-md'
                   }`}>
                   {message.role === 'assistant' ? (
                     <div className={`prose prose-sm max-w-none ${darkMode ? 'prose-invert' : ''}`}>
